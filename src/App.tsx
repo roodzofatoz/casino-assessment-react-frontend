@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Navigation from "./components/Navigation/Navigation";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const App = () => {
     <div className="w-full h-screen bg-black text-white overflow-hidden">
       <Navigation />
       <RouterProvider router={router} />
+      <Toaster position="bottom-center" />
     </div>
   );
 };

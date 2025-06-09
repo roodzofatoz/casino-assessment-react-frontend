@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
+import toast from "react-hot-toast";
 
 const Deposit: React.FC = () => {
   const { setBalance } = useAuth();
@@ -13,6 +14,7 @@ const Deposit: React.FC = () => {
     if (formRef.current?.checkValidity()) {
       const amount = depositAmount + depositAmount * 2;
       setBalance(amount);
+      toast.success("Deposit Successful");
     } else {
       formRef.current?.reportValidity();
     }

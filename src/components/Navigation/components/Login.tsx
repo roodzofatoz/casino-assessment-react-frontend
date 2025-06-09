@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
+import toast from "react-hot-toast";
 
 const Login: React.FC = () => {
   const { login } = useAuth();
@@ -37,6 +38,7 @@ const Login: React.FC = () => {
 
     if (formRef.current?.checkValidity()) {
       login(username);
+      toast.success("Logged in successfully!");
     } else {
       formRef.current?.reportValidity();
     }
