@@ -1,13 +1,6 @@
 import React, { useState } from "react";
-import {
-  BiBitcoin,
-  BiExit,
-  BiSolidCrown,
-  BiSolidUser,
-  BiSolidUserCircle,
-  BiSolidWallet,
-} from "react-icons/bi";
-import { FaEthereum, FaUserCircle } from "react-icons/fa";
+import { BiExit, BiSolidCrown, BiSolidWallet } from "react-icons/bi";
+import { FaEthereum } from "react-icons/fa";
 import { RiMenu4Fill, RiMenuFill } from "react-icons/ri";
 import Modal from "../../Modal";
 import Login from "./Login";
