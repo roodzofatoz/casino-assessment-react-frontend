@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SideNav from "./components/SideNav";
 import TopNav from "./components/TopNav";
-import Modal from "../Modal";
 import { useGeneralContext } from "../../contexts/GeneralContext";
 
 const Navigation: React.FC = () => {

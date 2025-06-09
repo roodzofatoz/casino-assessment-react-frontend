@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  BiCaretLeft,
-  BiCaretRight,
-  BiInfoCircle,
-  BiSolidInfoCircle,
-} from "react-icons/bi";
+import { BiCaretLeft, BiCaretRight, BiSolidInfoCircle } from "react-icons/bi";
 interface Card {
   id: number;
   title: string;
