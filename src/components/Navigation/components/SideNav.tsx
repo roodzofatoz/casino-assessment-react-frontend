@@ -42,7 +42,7 @@ const SideNav: React.FC<SideNav> = ({ show }) => {
         <div className="flex flex-col bg-[#1f1d2b] w-full h-full rounded-[12px] border-[1px] border-[#353345] p-[10px] gap-[10px]">
           {user != null ? (
             <>
-              <button className="flex items-center justify-start relative w-full px-[20px] h-[40px] rounded-[8px] bg-[#302e3f]/50 hover:bg-[#302e3f] duration-500 border-[1px] border-[#353345] gap-[6px]">
+              <button className="md:hidden flex items-center justify-start relative w-full px-[20px] h-[40px] rounded-[8px] bg-[#302e3f]/50 hover:bg-[#302e3f] duration-500 border-[1px] border-[#353345] gap-[6px]">
                 Welcome back!{" "}
                 <span className="mr-[20px] flex items-center gap-[6px] font-bold">
                   {user.username}
@@ -52,7 +52,7 @@ const SideNav: React.FC<SideNav> = ({ show }) => {
               </button>
               <button
                 onClick={() => setShowDepositModal(true)}
-                className="flex items-center justify-start relative px-[20px] w-full h-[40px] rounded-[8px] bg-[#00cccc] hover:bg-[#00cccc]/50 group duration-500 border-[1px] border-[#353345] gap-[6px] cursor-pointer"
+                className="md:hidden flex items-center justify-start relative px-[20px] w-full h-[40px] rounded-[8px] bg-[#00cccc] hover:bg-[#00cccc]/50 group duration-500 border-[1px] border-[#353345] gap-[6px] cursor-pointer"
               >
                 <FaEthereum className="group-hover:text-[#fff] text-[#110c17] text-[18px] duration-500" />
                 <p className="group-hover:text-[#fff] text-[#110c17] duration-500 font-orbitron tracking-[2px] max-w-[120px] truncate">
