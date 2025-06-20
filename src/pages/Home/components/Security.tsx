@@ -106,7 +106,7 @@ const Security: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center snap-start">
+    <div className="min-h-screen flex flex-col items-center justify-center">
       <h1 className="text-[40px] font-orbitron text-center">
         Trust and Security
       </h1>

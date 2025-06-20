@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import {
+  BiCaretDown,
+  BiChevronDown,
   BiExit,
   BiSolidCoin,
   BiSolidCrown,
@@ -13,6 +15,7 @@ import Modal from "../../Modal";
 import Login from "./Login";
 import Deposit from "./Deposit";
 import { FaEthereum } from "react-icons/fa";
+import { GiAce } from "react-icons/gi";
 
 interface SideNav {
   show: boolean;
@@ -22,6 +25,8 @@ const SideNav: React.FC<SideNav> = ({ show }) => {
   const { user, logout } = useAuth();
   const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
   const [showDepositModal, setShowDepositModal] = useState<boolean>(false);
+
+  const [gamesOpen, setGamesOpen] = useState<boolean>(false);
 
   const shortenAddress = (
     address: string,
@@ -82,13 +87,61 @@ const SideNav: React.FC<SideNav> = ({ show }) => {
             <BiSolidHome className="group-hover:text-[#fff] text-[#0f747b] duration-500 text-[16px]" />
             Home
           </button>
-          <button className="flex relative items-center justify-start w-full px-[20px] h-[40px] rounded-[8px] bg-[#302e3f]/50 hover:bg-[#302e3f] duration-500 border-[0px] gap-[12px] cursor-pointer text-[14px] group">
-            <BiSolidJoystick className="group-hover:text-[#fff] text-[#0f747b] duration-500 text-[16px]" />
-            Games
-            <div className="flex absolute right-[20px] items-center justify-center h-[20px] px-[8px] rounded-[4px] bg-[#00cccc]">
-              <p className="text-[10px] text-[#110c17]">NEW</p>
-            </div>
-          </button>
+          <div
+            onClick={() => setGamesOpen(!gamesOpen)}
+            className="block flex-col justify-start relative w-full h-[40px] overflow-hidden rounded-[8px] duration-500"
+            style={{ height: gamesOpen ? 200 : 40 }}
+          >
+            <button className="flex relative items-center justify-start w-full px-[20px] h-[40px]  bg-[#272534] hover:bg-[#302e3f] duration-500 border-[0px] gap-[12px] cursor-pointer text-[14px] group">
+              <BiSolidJoystick className="group-hover:text-[#fff] text-[#0f747b] duration-500 text-[16px]" />
+              Games
+              <div className="flex absolute right-[40px] items-center justify-center h-[20px] px-[8px] rounded-[4px] bg-[#00cccc]">
+                <p className="text-[10px] text-[#110c17]">NEW</p>
+              </div>
+              <div className="flex absolute right-[6px] items-center justify-center h-[20px] px-[8px] rounded-[4px]">
+                <BiChevronDown
+                  className={`text-[16px] duration-500 ${gamesOpen ? "rotate-0" : "rotate-180"}`}
+                />
+              </div>
+            </button>
+            <button className="flex flex-row items-center justify-start w-full h-[40px] pl-[30px] border-[0px] gap-[12px] cursor-pointer text-[14px] bg-[#fff] opacity-80 hover:opacity-100 duration-500 text-[#000] font-poppins">
+              {/* <BiSolidJoystick className="group-hover:text-[#fff] text-[#0f747b] duration-500 text-[16px]" /> */}
+              <img
+                src="/roulette.gif"
+                alt="Roulette animated"
+                className="w-[30px] h-[30px]"
+              />
+              Roulette
+            </button>
+            <button className="flex flex-row items-center justify-start w-full h-[40px] pl-[30px] border-[0px] gap-[12px] cursor-pointer text-[14px] bg-[#fff] opacity-80 hover:opacity-100  duration-500 text-[#000] font-poppins">
+              {/* <GiAce className="group-hover:text-[#fff] text-[#0f747b] duration-500 text-[16px]" /> */}
+              <img
+                src="/spades.gif"
+                alt="BlackJack animated"
+                className="w-[30px] h-[30px]"
+              />
+              BlackJack
+            </button>
+            <button className="flex flex-row items-center justify-start w-full h-[40px] pl-[30px] border-[0px] gap-[12px] cursor-pointer text-[14px] bg-[#fff] opacity-80 hover:opacity-100  duration-500 text-[#000] font-poppins">
+              {/* <BiSolidJoystick className="group-hover:text-[#fff] text-[#0f747b] duration-500 text-[16px]" /> */}
+              <img
+                src="/chip.gif"
+                alt="Chip animated"
+                className="w-[30px] h-[30px]"
+              />
+              Baccarat
+            </button>
+            <button className="flex flex-row items-center justify-start w-full h-[40px] pl-[30px] border-[0px] gap-[12px] cursor-pointer text-[14px] bg-[#fff] opacity-80 hover:opacity-100  duration-500 text-[#000] font-poppins">
+              {/* <BiSolidJoystick className="group-hover:text-[#fff] text-[#0f747b] duration-500 text-[16px]" /> */}
+              <img
+                src="/slot-machine.gif"
+                alt="Slot Machine animated"
+                className="w-[30px] h-[30px]"
+              />
+              Slot Machine
+            </button>
+          </div>
+
           {user != null && (
             <>
               <button
