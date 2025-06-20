@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  BiCaretDown,
   BiChevronDown,
   BiExit,
   BiSolidCoin,
@@ -15,7 +14,6 @@ import Modal from "../../Modal";
 import Login from "./Login";
 import Deposit from "./Deposit";
 import { FaEthereum } from "react-icons/fa";
-import { GiAce } from "react-icons/gi";
 
 interface SideNav {
   show: boolean;
