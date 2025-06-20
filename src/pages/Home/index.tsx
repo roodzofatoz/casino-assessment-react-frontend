@@ -5,7 +5,9 @@ import Welcome from "./components/Welcome";
 import Footer from "./components/Footer";
 import Security from "./components/Security";
 import Games from "./components/Games";
-import WinnersCarousel from "./components/WinnersCarousel";
+// import WinnersCarousel from "./components/WinnersCarousel";
+import { Toaster } from "react-hot-toast";
+import Navigation from "../../components/Navigation/Navigation";
 
 const Home: React.FC = () => {
   const { navOpenIndicator } = useGeneralContext();
@@ -16,11 +18,13 @@ const Home: React.FC = () => {
         paddingLeft: navOpenIndicator ? 200 : 0,
       }}
     >
+      <Navigation />
+      <Toaster position="bottom-center" />
       <Hero />
       <Welcome />
       <Games />
       <Security />
-      <WinnersCarousel />
+      {/* <WinnersCarousel /> */}
       <Footer />
     </div>
   );

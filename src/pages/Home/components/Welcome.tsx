@@ -63,7 +63,7 @@ const Welcome: React.FC = () => {
         <h1 ref={ref} className="w-[90%] text-center text-[40px] font-orbitron">
           A Welcome Bonus awaits you!
         </h1>
-        <div className="w-full flex flex-col items-center justify-center bg-[#000]/50 pt-[20px] pb-[30px] relative">
+        <div className="w-full flex flex-col items-center justify-center bg-[#110c17]/50 pt-[20px] pb-[30px] relative">
           <img
             src="/aura-effect.webp"
             alt="Aura"
